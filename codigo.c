@@ -1,64 +1,61 @@
-/******************************************************************************
-
-Welcome to GDB Online.
-  GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby,
-  C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, COBOL, HTML, CSS, JS
-  Code, Compile, Run and Debug online from anywhere in world.
-
-*******************************************************************************/
 #include <stdio.h>
 #include <stdlib.h>
 #include "Queue.h"
 
-int main()
-{
-	int quantidade1, quantidade2, quantidade3, escolha;
+int main() {
+    int quantidade1, quantidade2, quantidade3, escolha;
+    int tam1, tam2, tam3;
 
+    Queue *fila1 = CreateQueue(quantidade1);
+    Queue *fila2 = CreateQueue(quantidade2);
+    Queue *fila3 = CreateQueue(quantidade3);
 
-	printf("1 - Leitura da fila1\n");
-	printf("2 - Leitura da fila2\n");
-	printf("3 - Leitura da fila3\n");
-	printf("4 - ImpressC#o das 3 filas\n");
-	printf("5 - CriaC'C#o do canal compartilhado\n");
-	printf("6 - ImpressC#o do canal compartilhado\n");
-	printf("Canal compartilhado: dado1, dado2, dado3\n");
-	printf("7 - Sair\n");
+    do {
+        printf("\n1 - Leitura da fila1\n");
+        printf("2 - Leitura da fila2\n");
+        printf("3 - Leitura da fila3\n");
+        printf("4 - Impressão das 3 filas\n");
+        printf("5 - Criação do canal compartilhado\n");
+        printf("6 - Impressão do canal compartilhado\n");
+        printf("7 - Sair\n");
 
-	scanf("%d", escolha);
-	if(escolha==1) {
-		printf("Digite a quantidde na primeira fila \n");
-		scanf("%d", quantidade1);
-		for(int i =0; i<=quantidade1;i++) {
-			Queue *fila = CreateQueue(quantidade1);
-			i++;
-		}
-	}
+        scanf("%d", &escolha);  
 
-	if(escolha==2) {
-		printf("Digite a quantidde na primeira fila \n");
-		scanf("%d", quantidade2);
-		for() {
-			Queue *fila2 = CreateQueue(quantidade2);
-		}
-	}
+        if (escolha == 1) {
+            printf("Digite a quantidade na primeira fila \n");
+            scanf("%d", &quantidade1);  
+            for (int i = 0; i < quantidade1; i++) {  
+                printf("Digite o valor a ser enfileirado para fila 1: ");
+                scanf("%d", &tam1);  
+                enqueue(fila1, tam1); 
+            }
+        }
 
-	if(escolha==3) {
-		printf("Digite a quantidde na primeira fila \n");
-		scanf("%d", quantidade2);
-		for() {
-			Queue *fila3 = CreateQueue(quantidade3);
-		}
-	}
-	Queue *filaFluxo = CreateQueue(quantidade1+quantidade2+quantidade3);
+        if (escolha == 2) {
+            printf("Digite a quantidade na segunda fila \n");
+            scanf("%d", &quantidade2);  
+            for (int i = 0; i < quantidade2; i++) {  
+                printf("Digite o valor a ser enfileirado para fila 2: ");
+                scanf("%d", &tam2); 
+                enqueue(fila2, tam2);
+            }
+        }
 
-	Queue *filaValores = CreateQueue(q; uantidade1+quantidade2+quantidade3);
-	//inserir valores
+        if (escolha == 3) {
+            printf("Digite a quantidade na terceira fila \n");
+            scanf("%d", &quantidade3);  
+            for (int i = 0; i < quantidade3; i++) {  
+                printf("Digite o valor a ser enfileirado para fila 3: ");
+                scanf("%d", &tam3);  
+                enqueue(fila3, tam3);
+            }
+        }
 
-	//para print
-	printQueue(fila,1);
-	printf("Removido: %d\n", dequeue(fila));
-	enqueue(fila, 5);
+        if (escolha == 7) {
+            printf("Saindo do programa...\n");
+        }
 
-	printQueue(fila, 1);
-	return 0;
+    } while (escolha != 7); 
+
+    return 0;
 }
